@@ -473,6 +473,7 @@ void *kUserDataHint = &kUserDataHint;
     }
     else {
         [NSEvent removeMonitor:eventMonitor];
+        eventMonitor = nil;
     }
 }
 
