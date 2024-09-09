@@ -414,7 +414,10 @@ void *kUserDataHint = &kUserDataHint;
     _hintToolTipTag = [self addToolTipRect:hintRect owner:self userData:kUserDataHint];
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 - (NSString *)view:(NSView *)view stringForToolTip:(NSToolTipTag)tag point:(CGPoint)point userData:(void *)data
+#pragma clang diagnostic pop
 {
     if (data == kUserDataShortcut) {
         return MASLocalizedString(@"Click to record new shortcut", @"Tooltip for non-empty shortcut button");
