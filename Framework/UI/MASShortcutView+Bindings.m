@@ -39,7 +39,10 @@
 
 - (void) setAssociatedUserDefaultsKey: (NSString*) newKey
 {
-    [self setAssociatedUserDefaultsKey:newKey withTransformerName:NSKeyedUnarchiveFromDataTransformerName];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+   [self setAssociatedUserDefaultsKey:newKey withTransformerName:NSKeyedUnarchiveFromDataTransformerName];
+#pragma clang diagnostic pop
 }
 
 @end
